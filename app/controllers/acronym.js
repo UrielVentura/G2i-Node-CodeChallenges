@@ -26,8 +26,12 @@ exports.PostNewAcronym = async (req, res) => {
         let {acronym , definition} = req.query
 
         data.push({[acronym]:definition})
+
+        fs.writeFile('acronym.json',JSON.stringify(data) ,(err => {
+            if (err) throw console.log(err);
+        }))
         
-        res.status(200).send(data)
+        res.status(200).send({success: 'New Acronym Added'})
     } catch (error) {
         res.status(500).send(error);
     }
