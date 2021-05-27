@@ -13,4 +13,9 @@ router.get(
     controller.GetData
 )
 
+router.post(
+    `/${path}`,
+    controller.PostNewAcronym
+    )
+
 module.exports = router
