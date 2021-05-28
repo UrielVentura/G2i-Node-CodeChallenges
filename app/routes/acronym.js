@@ -16,6 +16,12 @@ router.get(
 router.post(
     `/${path}`,
     controller.PostNewAcronym
-    )
+)
+
+router.put(
+    `/${path}`,
+    controller.UpdateAcronym
+)
+
 
 module.exports = router
